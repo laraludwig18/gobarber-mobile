@@ -1,6 +1,6 @@
 # GoBarber
 
-App para agendamentos de serviços de barbearia
+App para agendamento de serviços de barbearia
 
 ## Telas
 
