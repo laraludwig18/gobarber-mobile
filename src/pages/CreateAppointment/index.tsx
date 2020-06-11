@@ -212,6 +212,7 @@ const CreateAppointment: React.FC = () => {
 
           {showDatePicker && (
             <DateTimePicker
+              minimumDate={new Date()}
               mode="date"
               display="calendar"
               textColor="#f4ede8"

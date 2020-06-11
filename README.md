@@ -50,7 +50,9 @@ yarn start
 - [x] Deslogar usuário quando token expirar
 - [ ] Paginar lista de providers
 - [ ] Usar react-native-fast-image para lidar com imagens externas
+- [ ] Retornar erro ao tentar agendar em um sábado ou domingo
 - [ ] Adicionar loader no botão
+- [ ] Adicionar shimmer effect nas telas
 - [ ] Criar estado global de loading usando context api
 - [ ] Adicionar tratamento caso usuário não tenha avatar
 - [ ] Separar tipagens que estejam duplicadas
