@@ -11,27 +11,27 @@ import { useField } from '@unform/core';
 
 import { Container, TextInput, Icon, Error, Wrapper } from './styles';
 
-interface InputProps extends TextInputProps {
+interface IInputProps extends TextInputProps {
   name: string;
   icon: string;
 }
 
-interface InputValueReference {
+interface IInputValueReference {
   value: string;
 }
 
-interface InputRef {
+interface IInputRef {
   focus(): void;
 }
 
-const Input: React.RefForwardingComponent<InputRef, InputProps> = (
+const Input: React.RefForwardingComponent<IInputRef, IInputProps> = (
   { name, icon, ...rest },
   ref,
 ) => {
   const { registerField, defaultValue = '', fieldName, error } = useField(name);
 
   const inputElementRef = useRef<any>(null);
-  const inputValueRef = useRef<InputValueReference>({ value: defaultValue });
+  const inputValueRef = useRef<IInputValueReference>({ value: defaultValue });
 
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
@@ -58,7 +58,7 @@ const Input: React.RefForwardingComponent<InputRef, InputProps> = (
       name: fieldName,
       ref: inputValueRef.current,
       path: 'value',
-      setValue(ref: any, value) {
+      setValue(_: any, value) {
         inputValueRef.current.value = value;
         inputElementRef.current.setNativeProps({ text: value });
       },

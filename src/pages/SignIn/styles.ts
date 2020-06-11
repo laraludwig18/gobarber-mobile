@@ -1,11 +1,11 @@
 import styled from 'styled-components/native';
 import { Platform } from 'react-native';
 
-interface CreateAccountProps {
+interface ICreateAccountProps {
   marginBottom: number;
 }
 
-export const CreateAccount = styled.TouchableOpacity<CreateAccountProps>(
+export const CreateAccount = styled.TouchableOpacity<ICreateAccountProps>(
   (props) => `
   position: absolute;
   left: 0;

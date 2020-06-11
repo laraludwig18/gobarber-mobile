@@ -44,3 +44,13 @@ Rodar projeto:
 ```
 yarn start
 ```
+
+## TODO
+
+- [x] Deslogar usuário quando token expirar
+- [ ] Paginar lista de providers
+- [ ] Usar react-native-fast-image para lidar com imagens externas
+- [ ] Adicionar loader no botão
+- [ ] Criar estado global de loading usando context api
+- [ ] Adicionar tratamento caso usuário não tenha avatar
+- [ ] Separar tipagens que estejam duplicadas

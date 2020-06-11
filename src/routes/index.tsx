@@ -4,10 +4,10 @@ import { ActivityIndicator, View } from 'react-native';
 import AppRoutes from './app.routes';
 import AuthRoutes from './auth.routes';
 
-import { useAuth } from '../hooks/auth';
+import { useAuth } from '../context/auth';
 
 const Routes: React.FC = () => {
-  const { user, loading } = useAuth();
+  const { token, loading } = useAuth();
 
   if (loading) {
     return (
@@ -17,7 +17,7 @@ const Routes: React.FC = () => {
     );
   }
 
-  return user ? <AppRoutes /> : <AuthRoutes />;
+  return token ? <AppRoutes /> : <AuthRoutes />;
 };
 
 export default Routes;

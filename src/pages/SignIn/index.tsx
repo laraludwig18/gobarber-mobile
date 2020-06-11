@@ -17,7 +17,7 @@ import { string, object, ValidationError } from 'yup';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 
-import { useAuth } from '../../hooks/auth';
+import { useAuth } from '../../context/auth';
 import getValidationErrors from '../../utils/getValidationErrors';
 import logoImg from '../../assets/logo/logo.png';
 import {
@@ -29,7 +29,7 @@ import {
   CreateAccountText,
 } from './styles';
 
-interface SignInFormData {
+interface ISignInFormData {
   email: string;
   password: string;
 }
@@ -43,7 +43,7 @@ const SignIn: React.FC = () => {
   const passwordRef = useRef<TextInput>(null);
 
   const handleSubmit = useCallback(
-    async (data: SignInFormData) => {
+    async (data: ISignInFormData) => {
       try {
         formRef.current?.setErrors({});
 
@@ -121,7 +121,7 @@ const SignIn: React.FC = () => {
           </Form>
 
           <ForgotPassword
-            onPress={() => {}}
+            onPress={() => null}
             hitSlop={{ bottom: 20, right: 20, left: 20 }}
           >
             <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>

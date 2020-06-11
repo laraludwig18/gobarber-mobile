@@ -1,11 +1,11 @@
 import styled from 'styled-components/native';
 import { Platform } from 'react-native';
 
-interface BackToSignInProps {
+interface IBackToSignInProps {
   marginBottom: number;
 }
 
-export const BackToSignIn = styled.TouchableOpacity<BackToSignInProps>(
+export const BackToSignIn = styled.TouchableOpacity<IBackToSignInProps>(
   (props) => `
   position: absolute;
   left: 0;

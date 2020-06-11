@@ -17,7 +17,7 @@ import { object, string, ValidationError } from 'yup';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 
-import api from '../../services/api';
+import { useApiClient } from '../../services/apiClient';
 import logoImg from '../../assets/logo/logo.png';
 import { Container, Title, BackToSignIn, BackToSignInText } from './styles';
 import getValidationErrors from '../../utils/getValidationErrors';
@@ -25,19 +25,20 @@ import getValidationErrors from '../../utils/getValidationErrors';
 const SignUp: React.FC = () => {
   const navigation = useNavigation();
   const insets = useSafeArea();
+  const api = useApiClient();
 
   const formRef = useRef<FormHandles>(null);
   const emailRef = useRef<TextInput>(null);
   const passwordRef = useRef<TextInput>(null);
 
-  interface SignUpFormData {
+  interface ISignUpFormData {
     name: string;
     email: string;
     password: string;
   }
 
   const handleSubmit = useCallback(
-    async (data: SignUpFormData) => {
+    async (data: ISignUpFormData) => {
       try {
         formRef.current?.setErrors({});
 
@@ -75,7 +76,7 @@ const SignUp: React.FC = () => {
         );
       }
     },
-    [navigation],
+    [api, navigation],
   );
 
   const submitForm = useCallback(() => formRef.current?.submitForm(), []);
