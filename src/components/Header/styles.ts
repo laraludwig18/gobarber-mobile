@@ -5,7 +5,7 @@ interface IHeaderProps {
 }
 
 export const Container = styled.View<IHeaderProps>`
-  height: 90px;
+  height: 140px;
   padding: 0 24px;
   padding-top: ${(props) => props.paddingTop}px;
   background-color: #28262e;

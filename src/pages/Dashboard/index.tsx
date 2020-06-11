@@ -3,8 +3,7 @@ import { StatusBar } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import Header from '../../components/Header';
-import Provider from './Provider';
-import { IProvider } from './types';
+import Provider, { IProvider } from './Provider';
 import { useApiClient } from '../../services/apiClient';
 import { useAuth } from '../../context/auth';
 

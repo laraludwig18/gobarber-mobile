@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import { FlatList } from 'react-native';
 
-import { IProvider } from './types';
+import { IProvider } from './Provider';
 
 export const Container = styled.View`
   flex: 1;

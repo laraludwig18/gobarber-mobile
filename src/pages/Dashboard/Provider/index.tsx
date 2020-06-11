@@ -2,8 +2,6 @@ import React, { useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Feather';
 
-import { IProvider } from '../types';
-
 import {
   Container,
   Avatar,
@@ -12,6 +10,12 @@ import {
   Info,
   WorkingTime,
 } from './styles';
+
+export interface IProvider {
+  id: string;
+  name: string;
+  avatarUrl: string;
+}
 
 interface IProviderProps {
   provider: IProvider;
