@@ -20,7 +20,7 @@ import Input from '../../components/Input';
 import { useApiClient } from '../../services/apiClient';
 import logoImg from '../../assets/logo/logo.png';
 import { Container, Title, BackToSignIn, BackToSignInText } from './styles';
-import getValidationErrors from '../../utils/getValidationErrors';
+import { getValidationErrors } from '../../utils';
 
 const SignUp: React.FC = () => {
   const navigation = useNavigation();

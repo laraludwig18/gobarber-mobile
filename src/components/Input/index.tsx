@@ -14,6 +14,7 @@ import { Container, TextInput, Icon, Error, Wrapper } from './styles';
 interface IInputProps extends TextInputProps {
   name: string;
   icon: string;
+  containerStyle?: {};
 }
 
 interface IInputValueReference {
@@ -25,7 +26,7 @@ interface IInputRef {
 }
 
 const Input: React.RefForwardingComponent<IInputRef, IInputProps> = (
-  { name, icon, ...rest },
+  { name, icon, containerStyle = {}, ...rest },
   ref,
 ) => {
   const { registerField, defaultValue = '', fieldName, error } = useField(name);
@@ -71,7 +72,11 @@ const Input: React.RefForwardingComponent<IInputRef, IInputProps> = (
 
   return (
     <Wrapper>
-      <Container isFocused={isFocused} isErrored={!!error}>
+      <Container
+        style={containerStyle}
+        isFocused={isFocused}
+        isErrored={!!error}
+      >
         <Icon
           name={icon}
           size={20}

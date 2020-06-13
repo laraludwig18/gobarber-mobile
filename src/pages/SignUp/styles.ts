@@ -33,6 +33,7 @@ export const Container = styled.ScrollView.attrs({
     flexGrow: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    paddingBottom: 20,
   },
 })`
   padding: 0 30px ${Platform.OS === 'android' ? 150 : 40}px;

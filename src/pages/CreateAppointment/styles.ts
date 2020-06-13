@@ -85,6 +85,8 @@ export const OpenDatePickerButtonText = styled.Text`
   color: #232129;
 `;
 
+export const ProfileButton = styled.TouchableOpacity``;
+
 export const ProviderAvatar = styled.Image`
   height: 32px;
   width: 32px;

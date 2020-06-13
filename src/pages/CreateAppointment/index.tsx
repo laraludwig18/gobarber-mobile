@@ -32,6 +32,7 @@ import {
   Content,
   CreateAppointmentButton,
   CreateAppointmentButtonText,
+  ProfileButton,
 } from './styles';
 
 export interface IProvider {
@@ -51,7 +52,7 @@ interface IProviderDayAvailabilityItem {
 
 const CreateAppointment: React.FC = () => {
   const { user } = useAuth();
-  const { goBack, navigate } = useNavigation();
+  const { goBack, reset, navigate } = useNavigation();
   const route = useRoute();
   const api = useApiClient();
 
@@ -135,8 +136,19 @@ const CreateAppointment: React.FC = () => {
         date,
       });
 
-      navigate('AppointmentCreated', {
-        date: date.getTime(),
+      reset({
+        routes: [
+          {
+            name: 'Dashboard',
+          },
+          {
+            name: 'AppointmentCreated',
+            params: {
+              date: date.getTime(),
+            },
+          },
+        ],
+        index: 1,
       });
     } catch (err) {
       Alert.alert(
@@ -144,7 +156,7 @@ const CreateAppointment: React.FC = () => {
         'Ocorreu um erro ao tentar criar o agendamento, tente novamente.',
       );
     }
-  }, [api, navigate, selectedDate, selectedHour, selectedProvider]);
+  }, [api, reset, selectedDate, selectedHour, selectedProvider]);
 
   const providerMorningAvailability = useMemo(() => {
     return providerDayAvailability
@@ -166,6 +178,10 @@ const CreateAppointment: React.FC = () => {
       }));
   }, [providerDayAvailability]);
 
+  const navigateToProfile = useCallback(() => {
+    navigate('Profile');
+  }, [navigate]);
+
   return (
     <Container>
       <Header>
@@ -175,7 +191,9 @@ const CreateAppointment: React.FC = () => {
 
         <HeaderTitle>Cabeleireiros</HeaderTitle>
 
-        <UserAvatar source={{ uri: user.avatarUrl }} />
+        <ProfileButton onPress={navigateToProfile}>
+          <UserAvatar source={{ uri: user.avatarUrl }} />
+        </ProfileButton>
       </Header>
 
       <Content>

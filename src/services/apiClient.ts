@@ -6,7 +6,7 @@ export function useApiClient(): AxiosInstance {
   const { signOut, token } = useAuth();
 
   const api = axios.create({
-    baseURL: 'http://192.168.100.101:3333',
+    baseURL: 'http://localhost:3333',
   });
 
   api.interceptors.request.use((config) => {
