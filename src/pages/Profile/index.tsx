@@ -14,7 +14,7 @@ import Icon from 'react-native-vector-icons/Feather';
 
 import Button from '../../components/Button';
 import Input from '../../components/Input';
-import UserAvatar from './UserAvatar';
+import AvatarInput from './AvatarInput';
 
 import { useAuth } from '../../context/auth';
 import { useApiClient } from '../../services/apiClient';
@@ -112,7 +112,7 @@ const Profile: React.FC = () => {
           <BackButton onPress={goBack}>
             <Icon name="chevron-left" size={26} color="#999591" />
           </BackButton>
-          <UserAvatar />
+          <AvatarInput />
 
           <View>
             <Title>Meu perfil</Title>

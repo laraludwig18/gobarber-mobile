@@ -8,7 +8,7 @@ import { useApiClient } from '../../../services/apiClient';
 
 import { Avatar, ChangeAvatarButton, Container } from './styles';
 
-const UserAvatar: React.FC = () => {
+const AvatarInput: React.FC = () => {
   const { user, updateUser } = useAuth();
   const api = useApiClient();
 
@@ -73,4 +73,4 @@ const UserAvatar: React.FC = () => {
   );
 };
 
-export default UserAvatar;
+export default AvatarInput;

@@ -52,7 +52,6 @@ yarn start
 - [x] Melhorar layout da tela de perfil
 - [ ] Adicionar botão para deslogar usuário
 - [ ] Retornar erro ao tentar agendar em um sábado ou domingo
-- [ ] Adicionar tratamento caso usuário não tenha avatar
 - [ ] Usar react-native-fast-image para lidar com imagens externas
 - [ ] Paginar lista de providers
 - [ ] Adicionar loader no botão
