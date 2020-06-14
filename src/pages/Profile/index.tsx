@@ -11,22 +11,16 @@ import { Form } from '@unform/mobile';
 import { FormHandles } from '@unform/core';
 import { object, string, ValidationError, ref } from 'yup';
 import Icon from 'react-native-vector-icons/Feather';
-import ImagePicker, { ImagePickerOptions } from 'react-native-image-picker';
 
 import Button from '../../components/Button';
 import Input from '../../components/Input';
+import UserAvatar from './UserAvatar';
 
 import { useAuth } from '../../context/auth';
 import { useApiClient } from '../../services/apiClient';
 import { getValidationErrors } from '../../utils';
 
-import {
-  BackButton,
-  Container,
-  UserAvatar,
-  UserAvatarButton,
-  Title,
-} from './styles';
+import { BackButton, Container, Title } from './styles';
 
 const Profile: React.FC = () => {
   const { user, updateUser } = useAuth();
@@ -105,56 +99,6 @@ const Profile: React.FC = () => {
     [api, goBack, updateUser],
   );
 
-  const sendUpdatedUserAvatar = useCallback(
-    async (imagePickerResponse) => {
-      try {
-        const { uri, type, fileName } = imagePickerResponse;
-
-        const data = new FormData();
-
-        data.append('avatar', {
-          type,
-          uri,
-          name: fileName,
-        });
-
-        const response = await api.patch('/users/avatar', data);
-
-        updateUser(response.data);
-      } catch (err) {
-        Alert.alert(
-          'Erro ao atualizar seu avatar.',
-          'Ocorreu um erro ao atualizar seu avatar, tente novamente.',
-        );
-      }
-    },
-    [api, updateUser],
-  );
-
-  const handleUpdateAvatar = useCallback(() => {
-    const options = {
-      title: 'Selecione um avatar',
-      cancelButtonTitle: 'Cancelar',
-      takePhotoButtonTitle: 'Usar câmera',
-      chooseFromLibraryButtonTitle: 'Escolher da galeria',
-      maxHeight: 800,
-      maxWidth: 800,
-    } as ImagePickerOptions;
-
-    ImagePicker.showImagePicker(options, async (response) => {
-      if (response.didCancel) {
-        return;
-      }
-
-      if (response.error) {
-        Alert.alert('Erro ao atualizar seu avatar.');
-        return;
-      }
-
-      sendUpdatedUserAvatar(response);
-    });
-  }, [sendUpdatedUserAvatar]);
-
   const submitForm = useCallback(() => formRef.current?.submitForm(), []);
 
   return (
@@ -168,9 +112,7 @@ const Profile: React.FC = () => {
           <BackButton onPress={goBack}>
             <Icon name="chevron-left" size={26} color="#999591" />
           </BackButton>
-          <UserAvatarButton onPress={handleUpdateAvatar}>
-            <UserAvatar source={{ uri: user.avatarUrl }} />
-          </UserAvatarButton>
+          <UserAvatar />
 
           <View>
             <Title>Meu perfil</Title>

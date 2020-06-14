@@ -15,15 +15,6 @@ export const Container = styled.ScrollView.attrs({
   padding: 0 30px ${Platform.OS === 'android' ? 150 : 40}px;
 `;
 
-export const UserAvatar = styled.Image`
-  width: 186px;
-  height: 186px;
-  border-radius: 98px;
-  align-self: center;
-`;
-
-export const UserAvatarButton = styled.TouchableOpacity``;
-
 export const Title = styled.Text`
   font-size: 20px;
   color: #f4ede8;

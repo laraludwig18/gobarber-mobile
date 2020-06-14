@@ -49,13 +49,13 @@ yarn start
 
 - [x] Deslogar usuário quando token expirar
 - [x] Diminuir tamanho da imagem antes de enviar para a api
-- [ ] Melhorar layout da tela de perfil
+- [x] Melhorar layout da tela de perfil
 - [ ] Adicionar botão para deslogar usuário
-- [ ] Paginar lista de providers
-- [ ] Usar react-native-fast-image para lidar com imagens externas
 - [ ] Retornar erro ao tentar agendar em um sábado ou domingo
+- [ ] Adicionar tratamento caso usuário não tenha avatar
+- [ ] Usar react-native-fast-image para lidar com imagens externas
+- [ ] Paginar lista de providers
 - [ ] Adicionar loader no botão
 - [ ] Adicionar shimmer effect nas telas ou loader nas telas
 - [ ] Criar estado global de loading usando context api
-- [ ] Adicionar tratamento caso usuário não tenha avatar
 - [ ] Separar tipagens que estejam duplicadas
