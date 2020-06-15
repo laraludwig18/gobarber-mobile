@@ -1,6 +1,6 @@
 # GoBarber
 
-App utilizado pelos clientes para agendar serviços com os prestadores.
+Aplicação mobile para agendamento de serviços com os prestadores.
 
 ## Telas
 
