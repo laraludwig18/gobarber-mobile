@@ -1,7 +1,8 @@
 {
   "env": {
     "es6": true,
-    "browser": true
+    "browser": true,
+    "jest": true
   },
   "extends": [
     "plugin:react/recommended",
@@ -52,6 +53,12 @@
       "error",
       {
         "allowExpressions": true
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
       }
     ],
     "import/extensions": [

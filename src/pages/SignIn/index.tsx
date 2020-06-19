@@ -36,7 +36,7 @@ interface ISignInFormData {
 
 const SignIn: React.FC = () => {
   const { signIn } = useAuth();
-  const navigation = useNavigation();
+  const { navigate } = useNavigation();
   const insets = useSafeArea();
 
   const formRef = useRef<FormHandles>(null);
@@ -131,7 +131,7 @@ const SignIn: React.FC = () => {
 
       <CreateAccount
         marginBottom={insets.bottom}
-        onPress={() => navigation.navigate('SignUp')}
+        onPress={() => navigate('SignUp')}
         hitSlop={{ bottom: 20, right: 20, left: 20 }}
       >
         <Icon name="log-in" size={20} color="#ff9000" />
