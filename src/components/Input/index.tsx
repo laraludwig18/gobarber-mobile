@@ -13,7 +13,7 @@ import { Container, TextInput, Icon, Error, Wrapper } from './styles';
 
 interface IInputProps extends TextInputProps {
   name: string;
-  icon: string;
+  icon?: string;
   containerStyle?: {};
 }
 
@@ -73,15 +73,19 @@ const Input: React.RefForwardingComponent<IInputRef, IInputProps> = (
   return (
     <Wrapper>
       <Container
+        testID="inputContainer"
         style={containerStyle}
         isFocused={isFocused}
         isErrored={!!error}
       >
-        <Icon
-          name={icon}
-          size={20}
-          color={isFocused || isFilled ? '#ff9000' : '#666360'}
-        />
+        {icon && (
+          <Icon
+            testID="inputIcon"
+            name={icon}
+            size={20}
+            color={isFocused || isFilled ? '#ff9000' : '#666360'}
+          />
+        )}
 
         <TextInput
           ref={inputElementRef}
