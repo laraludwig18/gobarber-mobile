@@ -1,12 +1,16 @@
 # GoBarber
 
-App para agendamento de serviços de barbearia
+Aplicação mobile para agendamento de serviços com os prestadores.
 
 ## Telas
 
 <div style="display:flex;">
   <img src="https://i.imgur.com/IWrCJ3r.png" width="300" height="600" title="source: imgur.com" />
   <img src="https://i.imgur.com/GbEVw24.png" width="300" height="600" title="source: imgur.com" />
+  <img src="https://i.imgur.com/yOofmVs.png" width="300" height="600" title="source: imgur.com" />
+  <img src="https://i.imgur.com/marM4lj.png" width="300" height="600" title="source: imgur.com" />
+  <img src="https://i.imgur.com/EJYISyO.png" width="300" height="600" title="source: imgur.com" />
+  <img src="https://i.imgur.com/jsn3vs8.png" width="300" height="600" title="source: imgur.com" />
 </div>
 
 ## Inicialização
