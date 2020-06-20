@@ -1,26 +1,16 @@
 import React from 'react';
+import { Alert } from 'react-native';
 import { render, fireEvent, waitFor } from 'react-native-testing-library';
 
-import { Alert } from 'react-native';
+import { mockedSignIn } from '../../../testUtils/mocks/authMock';
+import { mockedNavigate } from '../../../testUtils/mocks/navigationMock';
+
 import SignIn from '.';
-
-const mockedSignIn = jest.fn();
-
-jest.mock('@react-navigation/native', () => ({
-  useNavigation: () => ({
-    navigate: jest.fn(),
-  }),
-}));
-
-jest.mock('../../context/auth', () => ({
-  useAuth: () => ({
-    signIn: mockedSignIn,
-  }),
-}));
 
 describe('SignIn Page', () => {
   beforeEach(() => {
     mockedSignIn.mockClear();
+    mockedNavigate.mockClear();
   });
 
   it('should be able to sign in', async () => {
@@ -50,15 +40,15 @@ describe('SignIn Page', () => {
     const passwordField = getByPlaceholder('Digite sua senha');
     const buttonElement = getByText('Entrar');
 
-    fireEvent.changeText(emailField, { target: { value: 'not-valid-email' } });
-    fireEvent.changeText(passwordField, { target: { value: '212121' } });
+    fireEvent.changeText(emailField, 'not-valid-email');
+    fireEvent.changeText(passwordField, '212121');
 
     fireEvent.press(buttonElement);
 
     await waitFor(() => {
       expect(mockedSignIn).not.toHaveBeenCalled();
 
-      expect(getByText('Digita um email válido')).toBeTruthy();
+      expect(getByText('Digite um email válido')).toBeTruthy();
     });
   });
 
@@ -86,5 +76,15 @@ describe('SignIn Page', () => {
         'Ocorreu um erro ao fazer login, cheque as credenciais.',
       );
     });
+  });
+
+  it('should be able to navigate to sign up page', async () => {
+    const { getByText } = render(<SignIn />);
+
+    const buttonElement = getByText('Criar uma conta');
+
+    fireEvent.press(buttonElement);
+
+    expect(mockedNavigate).toHaveBeenCalledWith('SignUp');
   });
 });

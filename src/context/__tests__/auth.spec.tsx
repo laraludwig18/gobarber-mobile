@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 import AsyncStorage from '@react-native-community/async-storage';
 
-import { apiMock } from '../../../testUtils/mocks';
+import mockedApi from '../../../testUtils/mocks/apiMock';
 import { useAuth, AuthProvider } from '../auth';
 
 const user = {
@@ -20,7 +20,7 @@ const loginResponse = {
 
 describe('Auth Hook', () => {
   beforeAll(() => {
-    apiMock.onPost('sessions').reply(200, loginResponse);
+    mockedApi.onPost('sessions').reply(200, loginResponse);
   });
 
   it('should be able to sign in', async () => {

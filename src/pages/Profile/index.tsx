@@ -22,6 +22,12 @@ import { getValidationErrors } from '../../utils';
 
 import { BackButton, Container, Title } from './styles';
 
+interface IProfileFormData {
+  name: string;
+  email: string;
+  password: string;
+}
+
 const Profile: React.FC = () => {
   const { user, updateUser } = useAuth();
   const { goBack } = useNavigation();
@@ -32,12 +38,6 @@ const Profile: React.FC = () => {
   const passwordRef = useRef<TextInput>(null);
   const oldPasswordRef = useRef<TextInput>(null);
   const passwordConfirmationRef = useRef<TextInput>(null);
-
-  interface IProfileFormData {
-    name: string;
-    email: string;
-    password: string;
-  }
 
   const handleSubmit = useCallback(
     async (data: IProfileFormData) => {
@@ -109,7 +109,7 @@ const Profile: React.FC = () => {
         enabled
       >
         <Container keyboardShouldPersistTaps="handled">
-          <BackButton onPress={goBack}>
+          <BackButton onPress={goBack} testID="backButton">
             <Icon name="chevron-left" size={26} color="#999591" />
           </BackButton>
           <AvatarInput />

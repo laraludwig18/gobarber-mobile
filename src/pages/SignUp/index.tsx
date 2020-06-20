@@ -22,20 +22,20 @@ import logoImg from '../../assets/logo/logo.png';
 import { Container, Title, BackToSignIn, BackToSignInText } from './styles';
 import { getValidationErrors } from '../../utils';
 
+interface ISignUpFormData {
+  name: string;
+  email: string;
+  password: string;
+}
+
 const SignUp: React.FC = () => {
-  const navigation = useNavigation();
+  const { goBack } = useNavigation();
   const insets = useSafeArea();
   const api = useApiClient();
 
   const formRef = useRef<FormHandles>(null);
   const emailRef = useRef<TextInput>(null);
   const passwordRef = useRef<TextInput>(null);
-
-  interface ISignUpFormData {
-    name: string;
-    email: string;
-    password: string;
-  }
 
   const handleSubmit = useCallback(
     async (data: ISignUpFormData) => {
@@ -46,7 +46,7 @@ const SignUp: React.FC = () => {
           name: string().required('Nome obrigatório'),
           email: string()
             .required('Email obrigatório')
-            .email('Digita um email válido'),
+            .email('Digite um email válido'),
           password: string().min(6, 'No mínimo 6 dígitos'),
         });
 
@@ -61,7 +61,7 @@ const SignUp: React.FC = () => {
           'Você já pode fazer login na aplicação!',
         );
 
-        navigation.goBack();
+        goBack();
       } catch (err) {
         if (err instanceof ValidationError) {
           const errors = getValidationErrors(err);
@@ -76,7 +76,7 @@ const SignUp: React.FC = () => {
         );
       }
     },
-    [api, navigation],
+    [api, goBack],
   );
 
   const submitForm = useCallback(() => formRef.current?.submitForm(), []);
@@ -126,14 +126,14 @@ const SignUp: React.FC = () => {
               textContentType="newPassword"
             />
 
-            <Button onPress={submitForm}>Entrar</Button>
+            <Button onPress={submitForm}>Cadastrar</Button>
           </Form>
         </Container>
       </KeyboardAvoidingView>
 
       <BackToSignIn
         marginBottom={insets.bottom}
-        onPress={() => navigation.goBack()}
+        onPress={goBack}
         hitSlop={{ bottom: 20, right: 20, left: 20 }}
       >
         <Icon name="arrow-left" size={20} color="#fff" />

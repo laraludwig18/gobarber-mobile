@@ -50,7 +50,7 @@ const SignIn: React.FC = () => {
         const schema = object().shape({
           email: string()
             .required('Email obrigatório')
-            .email('Digita um email válido'),
+            .email('Digite um email válido'),
           password: string().required('Senha obrigatória'),
         });
 
