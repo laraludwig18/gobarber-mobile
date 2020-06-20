@@ -8,7 +8,8 @@ jest.mock('../../src/context/auth.tsx', () => ({
     user: {
       id: 'id',
       email: 'johndoe@gmail.com',
-      name: 'Jonh Doe',
+      name: 'John Doe',
+      avatarUrl: 'avatar-url',
     },
   }),
 }));

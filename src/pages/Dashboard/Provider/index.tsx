@@ -14,7 +14,7 @@ import {
 export interface IProvider {
   id: string;
   name: string;
-  avatarUrl: string;
+  avatarUrl?: string;
 }
 
 interface IProviderProps {
@@ -34,8 +34,11 @@ const Provider: React.FC<IProviderProps> = ({ provider }) => {
   );
 
   return (
-    <Container onPress={() => navigateToCreateAppointment(provider.id)}>
-      <Avatar source={{ uri: provider.avatarUrl }} />
+    <Container
+      testID="providerContainer"
+      onPress={() => navigateToCreateAppointment(provider.id)}
+    >
+      <Avatar testID="providerAvatar" source={{ uri: provider.avatarUrl }} />
 
       <Info>
         <Name>{provider.name}</Name>

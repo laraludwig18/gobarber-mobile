@@ -30,7 +30,7 @@ const AvatarInput: React.FC = () => {
         updateUser(response.data);
       } catch (err) {
         Alert.alert(
-          'Erro ao atualizar seu avatar.',
+          'Erro na atualização do avatar.',
           'Ocorreu um erro ao atualizar seu avatar, tente novamente.',
         );
       }
@@ -64,9 +64,12 @@ const AvatarInput: React.FC = () => {
 
   return (
     <Container>
-      <Avatar source={{ uri: user.avatarUrl }} />
+      <Avatar testID="userAvatar" source={{ uri: user.avatarUrl }} />
 
-      <ChangeAvatarButton onPress={handleUpdateAvatar}>
+      <ChangeAvatarButton
+        testID="changeAvatarButton"
+        onPress={handleUpdateAvatar}
+      >
         <Icon name="camera" size={22} color="#312E38" />
       </ChangeAvatarButton>
     </Container>
