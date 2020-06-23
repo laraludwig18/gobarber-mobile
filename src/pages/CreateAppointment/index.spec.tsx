@@ -52,11 +52,15 @@ const providerAvailability = [
 ];
 
 describe('CreateAppointment Page', () => {
-  beforeEach(() => {
+  beforeAll(() => {
     mockedApi.onGet('providers').reply(200, providersList);
     mockedApi
       .onGet('providers/id-1/day-availability')
       .reply(200, providerAvailability);
+  });
+
+  beforeEach(() => {
+    mockedReset.mockClear();
     mockedNavigate.mockClear();
   });
 
