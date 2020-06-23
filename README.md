@@ -54,6 +54,7 @@ yarn start
 - [x] Deslogar usuário quando token expirar
 - [x] Diminuir tamanho da imagem antes de enviar para a api
 - [x] Melhorar layout da tela de perfil
+- [x] Coverage >= 90%
 - [ ] Adicionar botão para deslogar usuário
 - [ ] Retornar erro ao tentar agendar em um sábado ou domingo
 - [ ] Usar react-native-fast-image para lidar com imagens externas

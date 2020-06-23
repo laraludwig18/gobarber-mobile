@@ -191,8 +191,8 @@ const CreateAppointment: React.FC = () => {
 
         <HeaderTitle>Cabeleireiros</HeaderTitle>
 
-        <ProfileButton onPress={navigateToProfile}>
-          <UserAvatar source={{ uri: user.avatarUrl }} />
+        <ProfileButton testID="profileButton" onPress={navigateToProfile}>
+          <UserAvatar testID="userAvatar" source={{ uri: user.avatarUrl }} />
         </ProfileButton>
       </Header>
 
@@ -208,6 +208,7 @@ const CreateAppointment: React.FC = () => {
                 <ProviderContainer
                   onPress={() => handleSelectProvider(provider.id)}
                   selected={isProviderSelected}
+                  testID={provider.id}
                 >
                   <ProviderAvatar source={{ uri: provider.avatarUrl }} />
                   <ProviderName selected={isProviderSelected}>
@@ -230,6 +231,7 @@ const CreateAppointment: React.FC = () => {
 
           {showDatePicker && (
             <DateTimePicker
+              testID="datePicker"
               minimumDate={new Date()}
               mode="date"
               display="calendar"
@@ -257,6 +259,7 @@ const CreateAppointment: React.FC = () => {
                       onPress={() => handleSelectHour(hour)}
                       available={available}
                       key={hourFormatted}
+                      testID={hourFormatted}
                     >
                       <HourText selected={isHourSelected}>
                         {hourFormatted}

@@ -1,10 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from 'react-native-testing-library';
 
-import {
-  mockedGoBack,
-  mockedParams,
-} from '../../../testUtils/mocks/navigationMock';
+import { mockedGoBack } from '../../../testUtils/mocks/navigationMock';
 
 import AppointmentCreated from '.';
 
@@ -18,10 +15,6 @@ describe('AppointmentCreated Page', () => {
   });
 
   it('should be able to display appointment information', () => {
-    mockedParams.mockReturnValue({
-      date: 12121212,
-    });
-
     const { getByText } = render(<AppointmentCreated />);
 
     const dateElement = getByText('Terça, dia 14 de março de 2020 às 12:00h');
