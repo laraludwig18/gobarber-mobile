@@ -19,8 +19,10 @@ import Input from '../../components/Input';
 
 import { useApiClient } from '../../services/apiClient';
 import logoImg from '../../assets/logo/logo.png';
-import { Container, Title, BackToSignIn, BackToSignInText } from './styles';
 import { getValidationErrors } from '../../utils';
+
+import { Colors } from '../../constants';
+import { Container, Title, BackToSignIn, BackToSignInText } from './styles';
 
 interface ISignUpFormData {
   name: string;
@@ -136,7 +138,7 @@ const SignUp: React.FC = () => {
         onPress={goBack}
         hitSlop={{ bottom: 20, right: 20, left: 20 }}
       >
-        <Icon name="arrow-left" size={20} color="#fff" />
+        <Icon name="arrow-left" size={20} color={Colors.WHITE} />
         <BackToSignInText>Voltar para logon</BackToSignInText>
       </BackToSignIn>
     </>

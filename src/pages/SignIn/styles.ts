@@ -1,6 +1,8 @@
 import styled from 'styled-components/native';
 import { Platform } from 'react-native';
 
+import { Colors, Fonts } from '../../constants';
+
 interface ICreateAccountProps {
   marginBottom: number;
 }
@@ -11,8 +13,8 @@ export const CreateAccount = styled.TouchableOpacity<ICreateAccountProps>(
   left: 0;
   bottom: 0;
   right: 0;
-  background: #312e38;
-  border: 1px solid #232129;
+  background: ${Colors.BACKGROUND};
+  border: 1px solid ${Colors.INPUTS};
   padding: 16px 0 ${16 + props.marginBottom}px;
 
   justify-content: center;
@@ -22,9 +24,9 @@ export const CreateAccount = styled.TouchableOpacity<ICreateAccountProps>(
 );
 
 export const CreateAccountText = styled.Text`
-  color: #ff9000;
+  color: ${Colors.ORANGE};
   font-size: 18px;
-  font-family: 'RobotoSlab-Regular';
+  font-family: ${Fonts.REGULAR};
   margin-left: 16px;
 `;
 
@@ -43,14 +45,14 @@ export const ForgotPassword = styled.TouchableOpacity`
 `;
 
 export const ForgotPasswordText = styled.Text`
-  color: #f4ede8;
+  color: ${Colors.LINEN};
   font-size: 16px;
-  font-family: 'RobotoSlab-Regular';
+  font-family: ${Fonts.REGULAR};
 `;
 
 export const Title = styled.Text`
   font-size: 24px;
-  color: #f4ede8;
-  font-family: 'RobotoSlab-Medium';
+  color: ${Colors.LINEN};
+  font-family: ${Fonts.MEDIUM};
   margin: 64px 0 24px;
 `;

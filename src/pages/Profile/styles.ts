@@ -1,6 +1,8 @@
 import styled from 'styled-components/native';
 import { Platform } from 'react-native';
 
+import { Colors, Fonts } from '../../constants';
+
 export const BackButton = styled.TouchableOpacity`
   margin-top: 60px;
 `;
@@ -17,7 +19,7 @@ export const Container = styled.ScrollView.attrs({
 
 export const Title = styled.Text`
   font-size: 20px;
-  color: #f4ede8;
-  font-family: 'RobotoSlab-Medium';
+  color: ${Colors.LINEN};
+  font-family: ${Fonts.MEDIUM};
   margin: 24px 0;
 `;

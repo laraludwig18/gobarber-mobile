@@ -10,6 +10,7 @@ import {
 } from '../../../testUtils/mocks/navigationMock';
 
 import CreateAppointment from '.';
+import { Colors } from '../../constants';
 
 const providersList = [
   {
@@ -78,10 +79,10 @@ describe('CreateAppointment Page', () => {
 
     await waitFor(() => {
       expect(getByText('provider 1')).toHaveStyle({
-        color: '#232129',
+        color: Colors.INPUTS,
       });
       expect(getByTestId('id-1')).toHaveStyle({
-        backgroundColor: '#FF9000',
+        backgroundColor: Colors.ORANGE,
       });
     });
   });
@@ -141,8 +142,8 @@ describe('CreateAppointment Page', () => {
 
       fireEvent.press(selectHourButton);
 
-      expect(selectHourButton).toHaveStyle({ backgroundColor: '#FF9000' });
-      expect(selectHourButtonText).toHaveStyle({ color: '#232129' });
+      expect(selectHourButton).toHaveStyle({ backgroundColor: Colors.ORANGE });
+      expect(selectHourButtonText).toHaveStyle({ color: Colors.INPUTS });
     });
   });
 
@@ -206,16 +207,16 @@ describe('CreateAppointment Page', () => {
       fireEvent.press(selectedProviderButton);
 
       expect(oldSelectedProviderButton).not.toHaveStyle({
-        backgroundColor: '#FF9000',
+        backgroundColor: Colors.ORANGE,
       });
       expect(getByText('provider 1')).not.toHaveStyle({
-        color: '#232129',
+        color: Colors.INPUTS,
       });
       expect(getByText('provider 2')).toHaveStyle({
-        color: '#232129',
+        color: Colors.INPUTS,
       });
       expect(selectedProviderButton).toHaveStyle({
-        backgroundColor: '#FF9000',
+        backgroundColor: Colors.ORANGE,
       });
     });
   });

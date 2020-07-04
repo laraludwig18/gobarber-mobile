@@ -20,6 +20,7 @@ import { useAuth } from '../../context/auth';
 import { useApiClient } from '../../services/apiClient';
 import { getValidationErrors } from '../../utils';
 
+import { Colors } from '../../constants';
 import { BackButton, Container, Title } from './styles';
 
 interface IProfileFormData {
@@ -110,7 +111,7 @@ const Profile: React.FC = () => {
       >
         <Container keyboardShouldPersistTaps="handled">
           <BackButton onPress={goBack} testID="backButton">
-            <Icon name="chevron-left" size={26} color="#999591" />
+            <Icon name="chevron-left" size={26} color={Colors.GRAY} />
           </BackButton>
           <AvatarInput />
 

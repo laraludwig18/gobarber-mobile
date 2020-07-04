@@ -9,6 +9,7 @@ import { useApiClient } from '../../services/apiClient';
 import { useAuth } from '../../context/auth';
 import Header from '../../components/Header';
 
+import { Colors } from '../../constants';
 import {
   BackButton,
   Container,
@@ -186,7 +187,7 @@ const CreateAppointment: React.FC = () => {
     <Container>
       <Header>
         <BackButton onPress={goBack}>
-          <Icon name="chevron-left" size={24} color="#999591" />
+          <Icon name="chevron-left" size={24} color={Colors.GRAY} />
         </BackButton>
 
         <HeaderTitle>Cabeleireiros</HeaderTitle>
@@ -235,7 +236,7 @@ const CreateAppointment: React.FC = () => {
               minimumDate={new Date()}
               mode="date"
               display="calendar"
-              textColor="#f4ede8"
+              textColor={Colors.LINEN}
               value={selectedDate}
               onChange={handleDateChanged}
             />

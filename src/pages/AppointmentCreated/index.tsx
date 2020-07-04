@@ -5,7 +5,7 @@ import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 
 import { capitalizeFirstWordLetter } from '../../utils';
-
+import { Colors } from '../../constants';
 import {
   ConfirmButton,
   ConfirmButtonText,
@@ -38,7 +38,7 @@ const AppointmentCreated: React.FC = () => {
 
   return (
     <Container>
-      <Icon name="check" size={80} color="#04d361" />
+      <Icon name="check" size={80} color={Colors.SEA_GREEN} />
 
       <Title>Agendamento concluído</Title>
       <Description>{formattedDate}</Description>

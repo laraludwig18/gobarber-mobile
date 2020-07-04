@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { StatusBar } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import Header from '../../components/Header';
@@ -41,7 +40,6 @@ const Dashboard: React.FC = () => {
 
   return (
     <Container>
-      <StatusBar barStyle="light-content" backgroundColor="#28262e" />
       <Header>
         <HeaderTitle>
           Bem vindo, {'\n'}

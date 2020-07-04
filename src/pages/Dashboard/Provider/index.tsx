@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Feather';
 
+import { Colors } from '../../../constants';
 import {
   Container,
   Avatar,
@@ -44,12 +45,12 @@ const Provider: React.FC<IProviderProps> = ({ provider }) => {
         <Name>{provider.name}</Name>
 
         <WorkingPeriod>
-          <Icon name="calendar" size={14} color="#ff9000" />
+          <Icon name="calendar" size={14} color={Colors.ORANGE} />
           <WorkingTime>Segunda à sexta</WorkingTime>
         </WorkingPeriod>
 
         <WorkingPeriod>
-          <Icon name="calendar" size={14} color="#ff9000" />
+          <Icon name="calendar" size={14} color={Colors.ORANGE} />
           <WorkingTime>8h às 18h</WorkingTime>
         </WorkingPeriod>
       </Info>

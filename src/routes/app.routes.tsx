@@ -6,6 +6,8 @@ import CreateAppointment from '../pages/CreateAppointment';
 import Dashboard from '../pages/Dashboard';
 import Profile from '../pages/Profile';
 
+import { Colors } from '../constants';
+
 const App = createStackNavigator();
 
 const AppRouter: React.FC = () => {
@@ -14,7 +16,7 @@ const AppRouter: React.FC = () => {
       screenOptions={{
         headerShown: false,
         cardStyle: {
-          backgroundColor: '#312e38',
+          backgroundColor: Colors.BACKGROUND,
         },
       }}
     >

@@ -2,6 +2,7 @@ import React from 'react';
 import { render, fireEvent, waitFor } from 'react-native-testing-library';
 
 import Input from '.';
+import { Colors } from '../../constants';
 
 jest.mock('@unform/core', () => ({
   useField: () => ({
@@ -41,15 +42,15 @@ describe('Input Component', () => {
     fireEvent(inputElement, 'focus');
 
     await waitFor(() => {
-      expect(containerElement).toHaveStyle({ borderColor: '#ff9000' });
-      expect(iconElement).toHaveStyle({ color: '#ff9000' });
+      expect(containerElement).toHaveStyle({ borderColor: Colors.ORANGE });
+      expect(iconElement).toHaveStyle({ color: Colors.ORANGE });
     });
 
     fireEvent(inputElement, 'blur');
 
     await waitFor(() => {
-      expect(containerElement).not.toHaveStyle({ borderColor: '#ff9000' });
-      expect(iconElement).not.toHaveStyle({ color: '#ff9000' });
+      expect(containerElement).not.toHaveStyle({ borderColor: Colors.ORANGE });
+      expect(iconElement).not.toHaveStyle({ color: Colors.ORANGE });
     });
   });
 
@@ -66,7 +67,7 @@ describe('Input Component', () => {
     fireEvent(inputElement, 'blur');
 
     await waitFor(() => {
-      expect(iconElement).toHaveStyle({ color: '#ff9000' });
+      expect(iconElement).toHaveStyle({ color: Colors.ORANGE });
     });
   });
 });

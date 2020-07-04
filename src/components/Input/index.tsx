@@ -9,6 +9,8 @@ import React, {
 import { TextInputProps } from 'react-native';
 import { useField } from '@unform/core';
 
+import { Colors } from '../../constants';
+
 import { Container, TextInput, Icon, Error, Wrapper } from './styles';
 
 interface IInputProps extends TextInputProps {
@@ -83,14 +85,14 @@ const Input: React.RefForwardingComponent<IInputRef, IInputProps> = (
             testID="inputIcon"
             name={icon}
             size={20}
-            color={isFocused || isFilled ? '#ff9000' : '#666360'}
+            color={isFocused || isFilled ? Colors.ORANGE : Colors.GRAY_HARD}
           />
         )}
 
         <TextInput
           ref={inputElementRef}
           keyboardAppearance="dark"
-          placeholderTextColor="#666360"
+          placeholderTextColor={Colors.GRAY_HARD}
           defaultValue={defaultValue}
           onFocus={handleInputFocus}
           onBlur={handleInputBlur}

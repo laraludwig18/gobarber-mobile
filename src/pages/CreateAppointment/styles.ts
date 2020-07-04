@@ -3,6 +3,7 @@ import { FlatList } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 
 import { IProvider } from '.';
+import { Colors, Fonts } from '../../constants';
 
 interface IProviderContainerProps {
   selected: boolean;
@@ -35,7 +36,7 @@ export const Content = styled.ScrollView.attrs({
 
 export const CreateAppointmentButton = styled(RectButton)`
   height: 50px;
-  background-color: #ff9000;
+  background-color: ${Colors.ORANGE};
   border-radius: 10px;
   align-items: center;
   justify-content: center;
@@ -44,20 +45,21 @@ export const CreateAppointmentButton = styled(RectButton)`
 
 export const CreateAppointmentButtonText = styled.Text`
   font-size: 18px;
-  font-family: 'RobotoSlab-Medium';
-  color: #312e38;
+  font-family: ${Fonts.MEDIUM};
+  color: ${Colors.BACKGROUND};
 `;
 
 export const HeaderTitle = styled.Text`
   font-size: 20px;
-  color: #f4ede8;
-  font-family: 'RobotoSlab-Medium';
+  color: ${Colors.LINEN};
+  font-family: ${Fonts.MEDIUM};
   margin-left: 16px;
 `;
 
 export const Hour = styled(RectButton)<IHourProps>`
   padding: 12px;
-  background-color: ${(props) => (props.selected ? '#FF9000' : '#3e3b47')};
+  background-color: ${(props) =>
+    props.selected ? Colors.ORANGE : Colors.SHAPE};
   border-radius: 10px;
   margin-right: 8px;
 
@@ -66,13 +68,13 @@ export const Hour = styled(RectButton)<IHourProps>`
 
 export const HourText = styled.Text<IHourTextProps>`
   font-size: 16px;
-  color: ${(props) => (props.selected ? '#232129' : '#f4ede8')};
-  font-family: 'RobotoSlab-Regular';
+  color: ${(props) => (props.selected ? Colors.INPUTS : Colors.LINEN)};
+  font-family: ${Fonts.REGULAR};
 `;
 
 export const OpenDatePickerButton = styled(RectButton)`
   height: 46px;
-  background-color: #ff9000;
+  background-color: ${Colors.ORANGE};
   border-radius: 10px;
   align-items: center;
   margin: 0 24px;
@@ -80,9 +82,9 @@ export const OpenDatePickerButton = styled(RectButton)`
 `;
 
 export const OpenDatePickerButtonText = styled.Text`
-  font-family: 'RobotoSlab-Medium';
+  font-family: ${Fonts.MEDIUM};
   font-size: 16px;
-  color: #232129;
+  color: ${Colors.INPUTS};
 `;
 
 export const ProfileButton = styled.TouchableOpacity``;
@@ -98,7 +100,8 @@ export const ProviderContainer = styled(RectButton)<IProviderContainerProps>`
   align-items: center;
   border-radius: 10px;
   padding: 8px 12px;
-  background-color: ${(props) => (props.selected ? '#FF9000' : '#3e3b47')};
+  background-color: ${(props) =>
+    props.selected ? Colors.ORANGE : Colors.SHAPE};
   margin-right: 16px;
 `;
 
@@ -121,8 +124,8 @@ export const ProvidersListContainer = styled.View`
 export const ProviderName = styled.Text<IProviderNameProps>`
   margin-left: 8px;
   font-size: 16px;
-  color: ${(props) => (props.selected ? '#232129' : '#f4ede8')};
-  font-family: 'RobotoSlab-Medium';
+  color: ${(props) => (props.selected ? Colors.INPUTS : Colors.LINEN)};
+  font-family: ${Fonts.MEDIUM};
 `;
 
 export const Section = styled.View`
@@ -138,9 +141,9 @@ export const SectionContent = styled.ScrollView.attrs({
 })``;
 
 export const SectionTitle = styled.Text`
-  color: #999591;
+  color: ${Colors.GRAY};
   font-size: 18px;
-  font-family: 'RobotoSlab-Regular';
+  font-family: ${Fonts.REGULAR};
   margin-bottom: 12px;
   margin-left: 24px;
 `;
@@ -157,8 +160,8 @@ export const UserAvatar = styled.Image`
 `;
 
 export const Title = styled.Text`
-  font-family: 'RobotoSlab-Medium';
+  font-family: ${Fonts.MEDIUM};
   font-size: 24px;
-  color: #f4ede8;
+  color: ${Colors.LINEN};
   margin: 0 24px 24px;
 `;

@@ -20,6 +20,8 @@ import Input from '../../components/Input';
 import { useAuth } from '../../context/auth';
 import { getValidationErrors } from '../../utils';
 import logoImg from '../../assets/logo/logo.png';
+
+import { Colors } from '../../constants';
 import {
   Container,
   Title,
@@ -134,7 +136,7 @@ const SignIn: React.FC = () => {
         onPress={() => navigate('SignUp')}
         hitSlop={{ bottom: 20, right: 20, left: 20 }}
       >
-        <Icon name="log-in" size={20} color="#ff9000" />
+        <Icon name="log-in" size={20} color={Colors.ORANGE} />
         <CreateAccountText>Criar uma conta</CreateAccountText>
       </CreateAccount>
     </>

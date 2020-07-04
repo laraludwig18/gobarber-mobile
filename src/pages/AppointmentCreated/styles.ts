@@ -1,8 +1,10 @@
 import styled from 'styled-components/native';
 import { RectButton } from 'react-native-gesture-handler';
 
+import { Colors, Fonts } from '../../constants';
+
 export const ConfirmButton = styled(RectButton)`
-  background-color: #ff9000;
+  background-color: ${Colors.ORANGE};
   border-radius: 10px;
   padding: 17px 38px;
   justify-content: center;
@@ -12,8 +14,8 @@ export const ConfirmButton = styled(RectButton)`
 
 export const ConfirmButtonText = styled.Text`
   font-size: 16px;
-  color: #312e38;
-  font-family: 'RobotoSlab-Medium';
+  color: ${Colors.BACKGROUND};
+  font-family: ${Fonts.MEDIUM};
 `;
 
 export const Container = styled.View`
@@ -24,19 +26,19 @@ export const Container = styled.View`
 `;
 
 export const Description = styled.Text`
-  color: #999591;
+  color: ${Colors.GRAY};
   text-align: center;
   font-size: 16px;
   line-height: 24px;
   margin-top: 16px;
-  font-family: 'RobotoSlab-Regular';
+  font-family: ${Fonts.REGULAR};
 `;
 
 export const Title = styled.Text`
   margin-top: 35px;
-  color: #f4ede8;
+  color: ${Colors.LINEN};
   font-size: 30px;
   line-height: 40px;
-  font-family: 'RobotoSlab-Medium';
+  font-family: ${Fonts.MEDIUM};
   text-align: center;
 `;

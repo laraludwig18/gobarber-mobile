@@ -6,6 +6,7 @@ import ImagePicker, { ImagePickerOptions } from 'react-native-image-picker';
 import { useAuth } from '../../../context/auth';
 import { useApiClient } from '../../../services/apiClient';
 
+import { Colors } from '../../../constants';
 import { Avatar, ChangeAvatarButton, Container } from './styles';
 
 const AvatarInput: React.FC = () => {
@@ -70,7 +71,7 @@ const AvatarInput: React.FC = () => {
         testID="changeAvatarButton"
         onPress={handleUpdateAvatar}
       >
-        <Icon name="camera" size={22} color="#312E38" />
+        <Icon name="camera" size={22} color={Colors.BACKGROUND} />
       </ChangeAvatarButton>
     </Container>
   );

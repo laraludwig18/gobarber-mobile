@@ -8,12 +8,18 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AppProvider from './context';
 import Routes from './routes';
 
+import { Colors } from './constants';
+
 const App: React.FC = () => (
   <NavigationContainer>
-    <StatusBar barStyle="light-content" backgroundColor="#312e38" translucent />
+    <StatusBar
+      barStyle="light-content"
+      backgroundColor={Colors.BACKGROUND}
+      translucent
+    />
     <AppProvider>
       <SafeAreaProvider>
-        <View style={{ flex: 1, backgroundColor: '#312e38' }}>
+        <View style={{ flex: 1, backgroundColor: Colors.BACKGROUND }}>
           <Routes />
         </View>
       </SafeAreaProvider>
