@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Feather';
-import { useSafeArea } from 'react-native-safe-area-context';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Form } from '@unform/mobile';
 import { FormHandles } from '@unform/core';
 import { object, string, ValidationError } from 'yup';
@@ -30,7 +30,7 @@ interface ISignUpFormData {
 
 const SignUp: React.FC = () => {
   const { goBack } = useNavigation();
-  const insets = useSafeArea();
+  const insets = useSafeAreaInsets();
   const api = useApiClient();
 
   const formRef = useRef<FormHandles>(null);

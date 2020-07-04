@@ -4,7 +4,7 @@ import './mocks/formDataMock';
 jest.mock('@react-native-community/async-storage', () => mockAsyncStorage);
 
 jest.mock('react-native-safe-area-context', () => ({
-  useSafeArea: () => ({
+  useSafeAreaInsets: () => ({
     top: 0,
     left: 0,
     right: 0,
