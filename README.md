@@ -2,6 +2,9 @@
 
 Aplicação mobile para agendamento de serviços com os prestadores.
 
+![CI](https://github.com/laraludwig18/gobarber-mobile/workflows/CI/badge.svg)
+[![Coverage Status](https://coveralls.io/repos/github/laraludwig18/gobarber-mobile/badge.svg?branch=master)](https://coveralls.io/github/laraludwig18/gobarber-mobile?branch=master)
+
 ## Telas
 
 <div style="display:flex;">
